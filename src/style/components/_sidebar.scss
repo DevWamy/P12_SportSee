@@ -1,0 +1,35 @@
+.sidebar {
+    position: fixed;
+    top: 20;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    background: #020203;
+    color: #fff;
+    z-index: 1;
+
+    ul {
+        padding-left: 0px;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    img {
+        width: 64px;
+        cursor: pointer;
+    }
+
+    .copyright {
+        font-size: 12px;
+        transform: rotate(-90deg);
+        width: 140px;
+    }
+}

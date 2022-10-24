@@ -3,25 +3,31 @@
     height: 100%;
 
     .home-content {
+        position: relative;
         padding-top: 159px;
-        margin-left: 12%;
+        margin-left: 16%;
         display: flex;
         flex-direction: column;
         justify-content: start;
         align-items: flex-start;
 
+        .results {
+            position: absolute;
+            right: 100px;
+            display: flex;
+            flex-direction: column;
+            padding-top: 77px;
+            gap: 30px;
+        }
+
         h1 {
+            font-weight: 500;
+            font-size: 36px;
             margin: 0;
         }
 
         .firstname {
             color: #ff0101;
-        }
-
-        &-body {
-            display: flex;
-            padding-top: 77px;
-            gap: 30px;
         }
     }
 }
