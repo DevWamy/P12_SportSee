@@ -1,0 +1,27 @@
+.activity-chart {
+    position: relative;
+    grid-area: A;
+    background: #fbfbfb;
+    padding: 24px 30px;
+
+    h4 {
+        position: absolute;
+        top: 0px;
+        left: 32px;
+    }
+
+    .custom-tooltip {
+        text-align: center;
+        background: #e60000;
+        color: #fff;
+        padding: 4px;
+        font-size: 8px;
+    }
+
+    .legend-ul {
+        display: flex;
+        position: absolute;
+        right: 0;
+        gap: 52px;
+    }
+}

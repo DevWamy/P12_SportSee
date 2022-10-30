@@ -1,12 +1,13 @@
 import React from 'react';
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
-import Card from './components/Card';
-import caloriesIcon from './assets/calories-icon.svg';
-import carbosIcon from './assets/carbos-icon.svg';
-import lipidsIcon from './assets/lipids-icon.svg';
-import proteinsIcon from './assets/proteins-icon.svg';
-import './style/_home.scss';
+import Header from '../components/Header';
+import Sidebar from '../components/Sidebar';
+import Card from '../components/Card';
+import DailyActivityChart from '../components/DailyActivityChart';
+import caloriesIcon from '../assets/calories-icon.svg';
+import carbosIcon from '../assets/carbos-icon.svg';
+import lipidsIcon from '../assets/lipids-icon.svg';
+import proteinsIcon from '../assets/proteins-icon.svg';
+import '../style/_home.scss';
 
 const userDatas = [
     {
@@ -56,6 +57,9 @@ const Home = () => {
                     <p>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
                 </div>
                 <div className="home-content-body">
+                    <div className="home-content-body-chart">
+                        <DailyActivityChart />
+                    </div>
                     <div className="results">
                         <Card
                             icon={caloriesIcon}
