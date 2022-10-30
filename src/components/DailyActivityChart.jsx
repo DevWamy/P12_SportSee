@@ -91,7 +91,7 @@ const DailyActivityChart = () => {
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {
             return (
-                <div className="custom-tooltip-activity py-3 px-2">
+                <div className="custom-tooltip">
                     <div> {`${payload[0].value}kg`}</div>
                     <div> {`${payload[1].value}kCal`}</div>
                 </div>
@@ -107,17 +107,19 @@ const DailyActivityChart = () => {
     //     const daysTab = ['1', '2', '3', '4', '5', '6', '7'];
     //     return daysTab[+day - 1];
     // }
+    const formatDay = (item) => new Date(item).getDate();
 
     return (
         <div className="activity-chart">
             <h4>Activité quotidienne</h4>
             <BarChart width={835} height={300} data={userActivity[0].sessions} barCategoryGap="54px">
                 <CartesianGrid vertical={false} strokeDasharray="3 3" />
-                <XAxis dataKey="day" />
+                <XAxis dataKey="day" tickMargin={16} tickSize={0} tickFormatter={formatDay} />
                 <YAxis
                     yAxisId="kg"
                     dataKey="kilogram"
                     orientation="right"
+                    domain={['dataMin-2', 'dataMax+1']}
                     axisLine={false}
                     tickLine={false}
                     tickCount={3}
@@ -126,6 +128,7 @@ const DailyActivityChart = () => {
                     yAxisId="cal"
                     datakey="calories"
                     orientation="false"
+                    domain={['dataMin-100', 'dataMax+0']}
                     axisLine={false}
                     tickLine={false}
                     hide={true}

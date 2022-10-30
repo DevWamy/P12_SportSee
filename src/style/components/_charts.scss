@@ -11,11 +11,18 @@
     }
 
     .custom-tooltip {
+        width: 39px;
+        height: 45px;
         text-align: center;
         background: #e60000;
         color: #fff;
         padding: 4px;
         font-size: 8px;
+
+        div {
+            margin-top: 7px;
+            margin-bottom: 7px;
+        }
     }
 
     .legend-ul {
