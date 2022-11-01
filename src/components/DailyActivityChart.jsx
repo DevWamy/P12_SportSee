@@ -89,7 +89,7 @@ console.log(userActivity);
 
 const DailyActivityChart = () => {
     const CustomTooltip = ({ active, payload }) => {
-        if (active && payload && payload.length) {
+        if (active && payload && payload.length > 0) {
             return (
                 <div className="custom-tooltip">
                     <div> {`${payload[0].value}kg`}</div>

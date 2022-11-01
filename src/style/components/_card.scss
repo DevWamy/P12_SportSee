@@ -3,6 +3,9 @@
     flex-direction: column;
     gap: 39px;
     width: 258px;
+    @media screen and (max-width: 1380px) {
+        flex-direction: row;
+    }
 }
 .card {
     display: flex;

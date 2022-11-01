@@ -32,4 +32,11 @@
         transform: rotate(-90deg);
         width: 140px;
     }
+
+    @media screen and (max-width: 1050px) {
+        width: 88px;
+        img {
+            width: 48px;
+        }
+    }
 }
