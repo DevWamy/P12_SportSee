@@ -4,6 +4,7 @@ import Sidebar from '../components/Sidebar';
 import Card from '../components/Card';
 import DailyActivityChart from '../components/DailyActivityChart';
 import AverageSessionsChart from '../components/AverageSessionChart';
+import PerfChart from '../components/PerfChart';
 import caloriesIcon from '../assets/calories-icon.svg';
 import carbosIcon from '../assets/carbos-icon.svg';
 import lipidsIcon from '../assets/lipids-icon.svg';
@@ -61,6 +62,7 @@ const Home = () => {
                     <div className="home-content-body-chart">
                         <DailyActivityChart />
                         <AverageSessionsChart />
+                        <PerfChart />
                     </div>
                     <div className="results">
                         <Card

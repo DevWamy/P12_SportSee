@@ -52,4 +52,13 @@
         padding: 1px 4px;
         font-size: 8px;
     }
+
+    .skills-chart {
+        background: #282d30;
+        width: 258px;
+        height: 263px;
+        grid-area: C;
+        border-radius: 5px;
+        text-transform: capitalize;
+    }
 }
