@@ -1,6 +1,6 @@
 import React from 'react';
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart, ResponsiveContainer } from 'recharts';
-// import '../style/components/_charts.scss';
+import '../style/components/_perfChart.scss';
 
 const userPerformance = [
     {
@@ -95,19 +95,19 @@ const PerfChart = () => {
     const formatKind = (id) => kindTitle[kind[id]];
 
     return (
-        <div className="skills-chart">
+        <div className="perf-chart">
             {/* On a besoin que le graphique s'adapte à l'écran. Et je me tiens à la maquette. */}
-            <ResponsiveContainer width="29%">
+            <ResponsiveContainer>
                 <RadarChart
                     data={data}
                     //Je centre l'affichage dans l'encart prévu.
                     cx="50%"
                     cy="50%"
+                    //J'ajuste au mieux par rapport à la taille de base.
                     outerRadius="70%"
-                    //Ici je modifie l'ordre d'affichage par rapport à celui des données.
+                    //Ici je modifie l'ordre d'affichage des termes par rapport à celui des données.
                     startAngle={210}
                     endAngle={570}
-                    style={{ backgroundColor: '#282D30' }}
                 >
                     {/* On ne veux aucun trait à l'interieur du graphique. */}
                     <PolarGrid radialLines={false} />

@@ -95,7 +95,9 @@ const AverageSessionChart = () => {
                 <XAxis
                     dataKey="day"
                     tickFormatter={formatDay}
+                    //Adaptation du contenu à l'element parent.
                     padding={{ left: 10, right: 10 }}
+                    //Espacement entre la courbe et les jours.
                     tickSize={23}
                     axisLine={false}
                     tickLine={false}
@@ -108,8 +110,11 @@ const AverageSessionChart = () => {
                     type="natural"
                     dataKey="sessionLength"
                     stroke="#fff"
+                    //Largeur de la courbe
                     strokeWidth={2}
+                    //Taille du point actif (au hover)
                     activeDot={{ r: 4 }}
+                    //Taille des points inactifs
                     dot={{ r: 0 }}
                 />
             </LineChart>

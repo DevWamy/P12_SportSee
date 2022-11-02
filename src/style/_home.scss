@@ -29,6 +29,20 @@
         .firstname {
             color: #ff0101;
         }
+
+        &-body {
+            display: flex;
+            padding-top: 77px;
+            gap: 30px;
+            &-chart {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+                grid-template-areas:
+                    'A A A'
+                    'B C D';
+            }
+        }
     }
 
     @media screen and (max-width: 1380px) {
