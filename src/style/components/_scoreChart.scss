@@ -1,0 +1,32 @@
+.chart-legend {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.chart-legend-1 {
+    color: #282d30;
+    font-size: 28px;
+    font-weight: 700;
+}
+.chart-legend-2 {
+    color: #74798c;
+    text-align: center;
+    font-size: 16px;
+    width: 70px;
+    line-height: 26px;
+}
+
+.score-chart {
+    position: relative;
+    background: #fbfbfb;
+    width: 258px;
+    height: 263px;
+    grid-area: D;
+    border-radius: 5px;
+
+    h4 {
+        position: absolute;
+        left: 20px;
+    }
+}

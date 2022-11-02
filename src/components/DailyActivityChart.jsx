@@ -1,6 +1,6 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend, Tooltip } from 'recharts';
-import '../style/components/_charts.scss';
+import '../style/components/_activityChart.scss';
 
 const userActivity = [
     {
@@ -100,26 +100,19 @@ const DailyActivityChart = () => {
         return null;
     };
 
-    // function days(day) {
-    //     userActivity[0].sessions.map((sessions, index) => ({
-    //         let day= index+1
-    //     }))
-    //     const daysTab = ['1', '2', '3', '4', '5', '6', '7'];
-    //     return daysTab[+day - 1];
-    // }
     const formatDay = (item) => new Date(item).getDate();
 
     return (
         <div className="activity-chart">
             <h4>Activité quotidienne</h4>
-            <BarChart width={835} height={300} data={userActivity[0].sessions} barCategoryGap="54px">
+            <BarChart width={765} height={230} data={userActivity[0].sessions} barCategoryGap="54px">
                 <CartesianGrid vertical={false} strokeDasharray="3 3" />
                 <XAxis dataKey="day" tickMargin={16} tickSize={0} tickFormatter={formatDay} />
                 <YAxis
                     yAxisId="kg"
                     dataKey="kilogram"
                     orientation="right"
-                    domain={['dataMin-2', 'dataMax+1']}
+                    domain={['dataMin -1', 'dataMax 0']}
                     axisLine={false}
                     tickLine={false}
                     tickCount={3}

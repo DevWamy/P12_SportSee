@@ -4,8 +4,8 @@
 
     .home-content {
         position: relative;
-        padding-top: 159px;
-        margin-left: 16%;
+        padding-top: 79px;
+
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -13,7 +13,8 @@
 
         .results {
             position: absolute;
-            right: 100px;
+            right: 50px;
+            top: 100px;
             display: flex;
             flex-direction: column;
             padding-top: 77px;
@@ -22,7 +23,7 @@
 
         h1 {
             font-weight: 500;
-            font-size: 36px;
+            font-size: 28px;
             margin: 0;
         }
 
@@ -32,7 +33,7 @@
 
         &-body {
             display: flex;
-            padding-top: 77px;
+            padding-top: 7px;
             gap: 30px;
             &-chart {
                 display: grid;
@@ -47,7 +48,7 @@
 
     @media screen and (max-width: 1380px) {
         .home-content {
-            margin-left: 15%;
+            margin-left: 12%;
 
             &-body {
                 flex-direction: column;

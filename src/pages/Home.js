@@ -5,6 +5,7 @@ import Card from '../components/Card';
 import DailyActivityChart from '../components/DailyActivityChart';
 import AverageSessionsChart from '../components/AverageSessionChart';
 import PerfChart from '../components/PerfChart';
+import ScoreChart from '../components/ScoreChart';
 import caloriesIcon from '../assets/calories-icon.svg';
 import carbosIcon from '../assets/carbos-icon.svg';
 import lipidsIcon from '../assets/lipids-icon.svg';
@@ -63,6 +64,7 @@ const Home = () => {
                         <DailyActivityChart />
                         <AverageSessionsChart />
                         <PerfChart />
+                        <ScoreChart />
                     </div>
                     <div className="results">
                         <Card

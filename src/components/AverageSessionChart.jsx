@@ -1,6 +1,6 @@
 import React from 'react';
-import { Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
-import '../style/components/_charts.scss';
+import { Line, LineChart, Tooltip, XAxis, YAxis, ResponsiveContainer } from 'recharts';
+import '../style/components/_averageChart.scss';
 
 const sessionActivity = [
     {
@@ -91,33 +91,35 @@ const AverageSessionChart = () => {
     return (
         <div className="average-sessions-chart">
             <h4>Durée moyenne des sessions</h4>
-            <LineChart width={258} height={143} data={sessionActivity[0].sessions}>
-                <XAxis
-                    dataKey="day"
-                    tickFormatter={formatDay}
-                    //Adaptation du contenu à l'element parent.
-                    padding={{ left: 10, right: 10 }}
-                    //Espacement entre la courbe et les jours.
-                    tickSize={23}
-                    axisLine={false}
-                    tickLine={false}
-                    tick={{ fill: 'rgba(255,255,255,0.6)', fontSize: 12, fontWeight: 500 }}
-                />
-                <YAxis hide type="number" domain={[(dataMin) => 0, (dataMax) => dataMax + 10]} />
-                <Tooltip content={<CustomTooltip />} fill={'rgba(0,0,0,.1'} />
-                {/* <Line type="natural" dataKey="sessionLength" dot={false} stroke="#FFFFFF" strokeWidth={2} /> */}
-                <Line
-                    type="natural"
-                    dataKey="sessionLength"
-                    stroke="#fff"
-                    //Largeur de la courbe
-                    strokeWidth={2}
-                    //Taille du point actif (au hover)
-                    activeDot={{ r: 4 }}
-                    //Taille des points inactifs
-                    dot={{ r: 0 }}
-                />
-            </LineChart>
+            <ResponsiveContainer height="70%">
+                <LineChart data={sessionActivity[0].sessions}>
+                    <XAxis
+                        dataKey="day"
+                        tickFormatter={formatDay}
+                        //Adaptation du contenu à l'element parent.
+                        padding={{ left: 10, right: 10 }}
+                        //Espacement entre la courbe et les jours.
+                        tickSize={23}
+                        axisLine={false}
+                        tickLine={false}
+                        tick={{ fill: 'rgba(255,255,255,0.6)', fontSize: 12, fontWeight: 500 }}
+                    />
+                    <YAxis hide type="number" domain={[(dataMin) => 0, (dataMax) => dataMax + 10]} />
+                    <Tooltip content={<CustomTooltip />} fill={'rgba(0,0,0,.1'} />
+                    {/* <Line type="natural" dataKey="sessionLength" dot={false} stroke="#FFFFFF" strokeWidth={2} /> */}
+                    <Line
+                        type="natural"
+                        dataKey="sessionLength"
+                        stroke="#fff"
+                        //Largeur de la courbe
+                        strokeWidth={2}
+                        //Taille du point actif (au hover)
+                        activeDot={{ r: 4 }}
+                        //Taille des points inactifs
+                        dot={{ r: 0 }}
+                    />
+                </LineChart>
+            </ResponsiveContainer>
         </div>
     );
 };

@@ -32,25 +32,3 @@
         gap: 52px;
     }
 }
-
-.average-sessions-chart {
-    background: #ff0000;
-    width: 258px;
-    height: 263px;
-    grid-area: B;
-    border-radius: 5px;
-
-    h4 {
-        font-size: 15px;
-        width: 147px;
-        color: #fff;
-        opacity: 50.4%;
-        padding: 0px 77px 0px 34px;
-    }
-
-    .custom-tooltip {
-        background: #fff;
-        padding: 1px 4px;
-        font-size: 8px;
-    }
-}
