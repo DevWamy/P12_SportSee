@@ -106,7 +106,6 @@ const AverageSessionChart = () => {
                     />
                     <YAxis hide type="number" domain={[(dataMin) => 0, (dataMax) => dataMax + 10]} />
                     <Tooltip content={<CustomTooltip />} fill={'rgba(0,0,0,.1'} />
-                    {/* <Line type="natural" dataKey="sessionLength" dot={false} stroke="#FFFFFF" strokeWidth={2} /> */}
                     <Line
                         type="natural"
                         dataKey="sessionLength"

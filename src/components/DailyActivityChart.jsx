@@ -105,9 +105,13 @@ const DailyActivityChart = () => {
     return (
         <div className="activity-chart">
             <h4>Activité quotidienne</h4>
-            <BarChart width={765} height={230} data={userActivity[0].sessions} barCategoryGap="54px">
+            {/* Taille du graph et quelles données on affiche. */}
+            <BarChart width={765} height={230} data={userActivity[0].sessions}>
+                {/* Pas d'affichage des lignes verticales et taille des pointillés. */}
                 <CartesianGrid vertical={false} strokeDasharray="3 3" />
+                {/* Absysse: marge entre graph et jours, pas de graduation, et format de jour specifique. */}
                 <XAxis dataKey="day" tickMargin={16} tickSize={0} tickFormatter={formatDay} />
+                {/* Ordonnée: affiché à droite, normalement tous les kg, pas d'axe de base, pas de graduation. */}
                 <YAxis
                     yAxisId="kg"
                     dataKey="kilogram"
@@ -117,6 +121,7 @@ const DailyActivityChart = () => {
                     tickLine={false}
                     tickCount={3}
                 />
+                {/* On a besoin d'afficher le rendu des calories aussi mais sans les parametres. */}
                 <YAxis
                     yAxisId="cal"
                     datakey="calories"
@@ -126,6 +131,7 @@ const DailyActivityChart = () => {
                     tickLine={false}
                     hide={true}
                 />
+                {/* Ici c'est l'infobulle. */}
                 <Tooltip content={<CustomTooltip />} />
                 <Legend
                     marginBottom={10}
@@ -135,6 +141,7 @@ const DailyActivityChart = () => {
                     iconSize={10}
                     height={95}
                 />
+                {/* Barre de poids avec couleur epaisseur et arrondi en haut. */}
                 <Bar
                     yAxisId="kg"
                     dataKey="kilogram"
@@ -143,6 +150,7 @@ const DailyActivityChart = () => {
                     barSize={7}
                     radius={[50, 50, 0, 0]}
                 />
+                {/* Barre de calories avec les bons parametres. */}
                 <Bar
                     yAxisId="cal"
                     dataKey="calories"
