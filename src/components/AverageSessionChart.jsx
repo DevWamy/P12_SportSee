@@ -85,6 +85,10 @@ const AverageSessionChart = () => {
         return null;
     };
 
+    const CustomHover = ({ points }) => {
+        return <rect x={points[0].x} y={0} height="100%" width="100%" fill="rgba(0, 0, 0, 0.1)" />;
+    };
+
     const dayWeek = { 1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D' };
     const formatDay = (item) => dayWeek[item];
 
@@ -105,7 +109,8 @@ const AverageSessionChart = () => {
                         tick={{ fill: 'rgba(255,255,255,0.6)', fontSize: 12, fontWeight: 500 }}
                     />
                     <YAxis hide type="number" domain={[(dataMin) => 0, (dataMax) => dataMax + 10]} />
-                    <Tooltip content={<CustomTooltip />} fill={'rgba(0,0,0,.1'} />
+                    <Tooltip content={<CustomTooltip />} cursor={<CustomHover />} fill={'rgba(0,0,0,.1'} />
+
                     <Line
                         type="natural"
                         dataKey="sessionLength"
