@@ -106,7 +106,7 @@ const DailyActivityChart = () => {
         <div className="activity-chart">
             <h4>Activité quotidienne</h4>
             {/* Taille du graph et quelles données on affiche. */}
-            <BarChart width={765} height={230} data={userActivity[0].sessions}>
+            <BarChart width={785} height={320} data={userActivity[0].sessions}>
                 {/* Pas d'affichage des lignes verticales et taille des pointillés. */}
                 <CartesianGrid vertical={false} strokeDasharray="3 3" />
                 {/* Absysse: marge entre graph et jours, pas de graduation, et format de jour specifique. */}
