@@ -66,7 +66,7 @@ const Home = () => {
         //     setFetchDatas(true);
         //     fetch('http://localhost:3000/user/18')
         //         .then((response) => {
-        //             data = response.json();
+        //             return response.json();
         //         })
         //         .then((datas) => {
         //             setUserDatas(datas?.data);

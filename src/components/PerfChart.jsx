@@ -1,4 +1,5 @@
 import React from 'react';
+// import { useState, useEffect } from 'react';
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart, ResponsiveContainer } from 'recharts';
 import '../style/components/_perfChart.scss';
 
@@ -79,9 +80,26 @@ const userPerformance = [
     },
 ];
 
-console.log(userPerformance);
+// console.log(userPerformance);
 
 const PerfChart = () => {
+    // const [perfDatas, setPerfDatas] = useState(null);
+    // const url = 'http://localhost:3000/user/18/performance';
+    // const getDatas = async () => {
+    //     try {
+    //         const response = await fetch(url);
+
+    //         const myDatas = await response.json();
+    //         setPerfDatas(myDatas);
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // };
+
+    // useEffect(() => {
+    //     getDatas();
+    // }, []);
+
     const kind = userPerformance[0].kind;
     const data = userPerformance[0].data;
     const kindTitle = {
@@ -92,11 +110,12 @@ const PerfChart = () => {
         speed: 'Vitesse',
         intensity: 'Intensité',
     };
-    const formatKind = (id) => kindTitle[kind[id]];
+    // const formatKind = (id) => kindTitle[kind[id]];
 
     return (
         <div className="perf-chart">
             {/* On a besoin que le graphique s'adapte à l'écran. Et je me tiens à la maquette. */}
+            {/* {perfDatas && ( */}
             <ResponsiveContainer>
                 <RadarChart
                     data={data}
@@ -115,7 +134,7 @@ const PerfChart = () => {
                     <PolarAngleAxis
                         //J'ai besoin ici d'afficher le type de donnée selon son numero.
                         dataKey="kind"
-                        tickFormatter={formatKind}
+                        tickFormatter={(id) => kindTitle[kind[id]]}
                         //Paramètres de la police.
                         tick={{ fill: '#FFF', fontSize: 12 }}
                         //Positionnement des mots par rapport au graphique.
@@ -128,6 +147,7 @@ const PerfChart = () => {
                     <Radar dataKey="value" fill={`#ff0000`} fillOpacity={0.7} />
                 </RadarChart>
             </ResponsiveContainer>
+            {/* // )} */}
         </div>
     );
 };
