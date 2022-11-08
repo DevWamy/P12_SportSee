@@ -11,6 +11,21 @@
         justify-content: flex-start;
         align-items: flex-start;
 
+        &-body {
+            display: flex;
+            padding-top: 7px;
+            gap: 30px;
+
+            &-chart {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+                grid-template-areas:
+                    'A A A'
+                    'B C D';
+            }
+        }
+
         .results {
             position: absolute;
             right: 50px;
@@ -29,20 +44,6 @@
 
         .firstname {
             color: #ff0101;
-        }
-
-        &-body {
-            display: flex;
-            padding-top: 7px;
-            gap: 30px;
-            &-chart {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 30px;
-                grid-template-areas:
-                    'A A A'
-                    'B C D';
-            }
         }
     }
 

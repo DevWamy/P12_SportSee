@@ -47,7 +47,6 @@ import '../style/_home.scss';
 // ];
 
 const Home = () => {
-    // const [fetchDatas, setFetchDatas] = useState(false);
     const [userDatas, setUserDatas] = useState(null);
     const url = 'http://localhost:3000/user/18';
     const getDatas = async () => {
