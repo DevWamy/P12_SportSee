@@ -5,7 +5,6 @@
     .home-content {
         position: relative;
         padding-top: 79px;
-
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -16,6 +15,7 @@
             padding-top: 7px;
             gap: 30px;
 
+            flex-direction: column;
             &-chart {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);

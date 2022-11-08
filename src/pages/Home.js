@@ -75,38 +75,43 @@ const Home = () => {
                         <p>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
                     </div>
                 )}
+
+                {userDatas && (
+                    <div className="home-content-body">
+                        <div className="home-content-body-chart">
+                            <DailyActivityChart />
+                            <AverageSessionsChart />
+                            <PerfChart />
+                            <ScoreChart />
+                        </div>
+                        <div className="results">
+                            <Card
+                                icon={caloriesIcon}
+                                quantity={userDatas.data.keyData.calorieCount}
+                                unity="kCal"
+                                type="Calories"
+                            />
+                            <Card
+                                icon={proteinsIcon}
+                                quantity={userDatas.data.keyData.proteinCount}
+                                unity="g"
+                                type="Proteines"
+                            />
+                            <Card
+                                icon={carbosIcon}
+                                quantity={userDatas.data.keyData.carbohydrateCount}
+                                unity="g"
+                                type="Glucides"
+                            />
+                            <Card
+                                icon={lipidsIcon}
+                                quantity={userDatas.data.keyData.lipidCount}
+                                type="Lipides"
+                            />
+                        </div>
+                    </div>
+                )}
             </div>
-            {userDatas && (
-                <div className="home-content-body">
-                    <div className="home-content-body-chart">
-                        <DailyActivityChart />
-                        <AverageSessionsChart />
-                        <PerfChart />
-                        <ScoreChart />
-                    </div>
-                    <div className="results">
-                        <Card
-                            icon={caloriesIcon}
-                            quantity={userDatas.data.keyData.calorieCount}
-                            unity="kCal"
-                            type="Calories"
-                        />
-                        <Card
-                            icon={proteinsIcon}
-                            quantity={userDatas.data.keyData.proteinCount}
-                            unity="g"
-                            type="Proteines"
-                        />
-                        <Card
-                            icon={carbosIcon}
-                            quantity={userDatas.data.keyData.carbohydrateCount}
-                            unity="g"
-                            type="Glucides"
-                        />
-                        <Card icon={lipidsIcon} quantity={userDatas.data.keyData.lipidCount} type="Lipides" />
-                    </div>
-                </div>
-            )}
         </div>
     );
 };

@@ -43,7 +43,7 @@ const AverageSessionChart = () => {
         <div className="average-sessions-chart">
             <h4>Durée moyenne des sessions</h4>
             {sessionDatas && (
-                <ResponsiveContainer height="70%">
+                <ResponsiveContainer width="100%" height="100%">
                     <LineChart data={sessionDatas.data.sessions}>
                         <XAxis
                             dataKey="day"
@@ -51,12 +51,13 @@ const AverageSessionChart = () => {
                             //Adaptation du contenu à l'element parent.
                             padding={{ left: 10, right: 10 }}
                             //Espacement entre la courbe et les jours.
-                            tickSize={23}
+                            tickSize={5}
                             axisLine={false}
                             tickLine={false}
-                            tick={{ fill: 'rgba(255,255,255,0.6)', fontSize: 12, fontWeight: 500 }}
+                            tick={{ fill: 'rgba(255,255,255,0.6)' }}
                         />
-                        <YAxis hide type="number" domain={[(dataMin) => 0, (dataMax) => dataMax + 10]} />
+
+                        <YAxis hide domain={['dataMin-6', 'dataMax+12']} />
                         <Tooltip
                             content={<CustomTooltip />}
                             cursor={<CustomHover />}
