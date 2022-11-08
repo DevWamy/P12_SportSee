@@ -3,77 +3,6 @@ import { useState, useEffect } from 'react';
 import { Line, LineChart, Tooltip, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 import '../style/components/_averageChart.scss';
 
-// const sessionActivity = [
-//     {
-//         userId: 12,
-//         sessions: [
-//             {
-//                 day: 1,
-//                 sessionLength: 30,
-//             },
-//             {
-//                 day: 2,
-//                 sessionLength: 23,
-//             },
-//             {
-//                 day: 3,
-//                 sessionLength: 45,
-//             },
-//             {
-//                 day: 4,
-//                 sessionLength: 50,
-//             },
-//             {
-//                 day: 5,
-//                 sessionLength: 0,
-//             },
-//             {
-//                 day: 6,
-//                 sessionLength: 0,
-//             },
-//             {
-//                 day: 7,
-//                 sessionLength: 60,
-//             },
-//         ],
-//     },
-//     {
-//         userId: 18,
-//         sessions: [
-//             {
-//                 day: 1,
-//                 sessionLength: 30,
-//             },
-//             {
-//                 day: 2,
-//                 sessionLength: 40,
-//             },
-//             {
-//                 day: 3,
-//                 sessionLength: 50,
-//             },
-//             {
-//                 day: 4,
-//                 sessionLength: 30,
-//             },
-//             {
-//                 day: 5,
-//                 sessionLength: 30,
-//             },
-//             {
-//                 day: 6,
-//                 sessionLength: 50,
-//             },
-//             {
-//                 day: 7,
-//                 sessionLength: 50,
-//             },
-//         ],
-//     },
-// ];
-
-// console.log(sessionActivity);
-
 const AverageSessionChart = () => {
     const [sessionDatas, setSessionDatas] = useState(null);
     const url = 'http://localhost:3000/user/18/average-sessions';
@@ -116,7 +45,6 @@ const AverageSessionChart = () => {
             {sessionDatas && (
                 <ResponsiveContainer height="70%">
                     <LineChart data={sessionDatas.data.sessions}>
-                        {/* <LineChart data={sessionActivity[0].sessions}> */}
                         <XAxis
                             dataKey="day"
                             tickFormatter={formatDay}

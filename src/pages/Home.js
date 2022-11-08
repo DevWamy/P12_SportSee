@@ -61,25 +61,6 @@ const Home = () => {
         }
     };
     useEffect(() => {
-        // let data;
-        // if (!fetchDatas) {
-        //     setFetchDatas(true);
-        //     fetch('http://localhost:3000/user/18')
-        //         .then((response) => {
-        //             return response.json();
-        //         })
-        //         .then((datas) => {
-        //             setUserDatas(datas?.data);
-        //             console.log(datas);
-        //             // setFetchDatas(false);
-        //         })
-        //         .catch((error) => {
-        //             console.log(error);
-        //             setFetchDatas(true);
-        //         });
-        //     console.log(data);
-        // }
-
         getDatas();
     }, []);
     return (
