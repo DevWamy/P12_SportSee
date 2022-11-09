@@ -1,40 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { PieChart, Pie, ResponsiveContainer, Cell, Legend } from 'recharts';
+// import PropTypes from 'prop-types';
 import '../style/components/_scoreChart.scss';
-
-// const userScore = [
-//     {
-//         id: 12,
-//         userInfos: {
-//             firstName: 'Karl',
-//             lastName: 'Dovineau',
-//             age: 31,
-//         },
-//         todayScore: 0.12,
-//         keyData: {
-//             calorieCount: 1930,
-//             proteinCount: 155,
-//             carbohydrateCount: 290,
-//             lipidCount: 50,
-//         },
-//     },
-//     {
-//         id: 18,
-//         userInfos: {
-//             firstName: 'Cecilia',
-//             lastName: 'Ratorez',
-//             age: 34,
-//         },
-//         score: 0.3,
-//         keyData: {
-//             calorieCount: 2500,
-//             proteinCount: 90,
-//             carbohydrateCount: 150,
-//             lipidCount: 120,
-//         },
-//     },
-// ];
 
 const ScoreChart = () => {
     const [scoreDatas, setScoreDatas] = useState(null);
@@ -124,5 +92,9 @@ const ScoreChart = () => {
         </div>
     );
 };
+
+// ScoreChart.propTypes = {
+//     scoreDatas: PropTypes.number.isRequired,
+// };
 
 export default ScoreChart;

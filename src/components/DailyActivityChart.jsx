@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend, Tooltip } from 'recharts';
+// import PropTypes from 'prop-types';
 import '../style/components/_activityChart.scss';
 
 const DailyActivityChart = () => {
@@ -65,8 +66,13 @@ const DailyActivityChart = () => {
                         tickLine={false}
                         hide={true}
                     />
-                    {/* Ici c'est l'infobulle. */}
-                    <Tooltip content={<CustomTooltip />} />
+                    {/* Ici c'est l'infobulle. outline evite la ligne de contour par défaut. */}
+                    <Tooltip
+                        content={<CustomTooltip />}
+                        wrapperStyle={{
+                            outline: 'none',
+                        }}
+                    />
                     <Legend
                         marginBottom={10}
                         align="right"
@@ -98,5 +104,9 @@ const DailyActivityChart = () => {
         </div>
     );
 };
+
+// DailyActivityChart.propTypes = {
+//     data: PropTypes.array.isRequired,
+// };
 
 export default DailyActivityChart;

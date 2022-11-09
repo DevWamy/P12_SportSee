@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Line, LineChart, Tooltip, XAxis, YAxis, ResponsiveContainer } from 'recharts';
+// import PropTypes from 'prop-types';
 import '../style/components/_averageChart.scss';
 
 const AverageSessionChart = () => {
@@ -38,6 +39,7 @@ const AverageSessionChart = () => {
 
     const dayWeek = { 1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D' };
     const formatDay = (item) => dayWeek[item];
+    // const sessionRequired = sessionDatas.data.sessions;
 
     return (
         <div className="average-sessions-chart">
@@ -45,6 +47,7 @@ const AverageSessionChart = () => {
             {sessionDatas && (
                 <ResponsiveContainer width="100%" height="100%">
                     <LineChart data={sessionDatas.data.sessions}>
+                        {/* <LineChart data={sessionRequired}> */}
                         <XAxis
                             dataKey="day"
                             tickFormatter={formatDay}
@@ -62,6 +65,9 @@ const AverageSessionChart = () => {
                             content={<CustomTooltip />}
                             cursor={<CustomHover />}
                             fill={'rgba(0,0,0,.1'}
+                            wrapperStyle={{
+                                outline: 'none',
+                            }}
                         />
 
                         <Line
@@ -72,6 +78,7 @@ const AverageSessionChart = () => {
                             strokeWidth={2}
                             //Taille du point actif (au hover)
                             activeDot={{ r: 4 }}
+                            unit={'min'}
                             //Taille des points inactifs
                             dot={{ r: 0 }}
                         />
@@ -81,5 +88,9 @@ const AverageSessionChart = () => {
         </div>
     );
 };
+
+// AverageSessionChart.propTypes = {
+//     sessionRequired: PropTypes.array.isRequired,
+// };
 
 export default AverageSessionChart;
