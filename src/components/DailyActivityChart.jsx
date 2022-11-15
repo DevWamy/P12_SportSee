@@ -6,10 +6,9 @@ import { getUserActivity } from '../services/userFetchData';
 import '../style/components/_activityChart.scss';
 
 /**
- * This component describes the user's daily activity data.
+ * @description Component to display the weight and the calories burned by the user.
  * In this component, the function returns a component with a title, responsive container, double bar chart, x-axis, right y-axis, legend, and custom tooltip.
- *
- * @return  {JSX.Element}    Bar Chart
+ * @return  {JSX.Element}   A customized bar chart.
  */
 
 const DailyActivityChart = () => {

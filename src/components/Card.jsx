@@ -3,14 +3,8 @@ import PropTypes from 'prop-types';
 import '../style/components/_card.scss';
 
 /**
- * It takes in a type and a countValue, and returns a div with an image, a paragraph, and a span.
- *
- * @prop   { String }   icon image of macronutrient
- * @prop   { ?String }  quantity  Value of the macronutrient
- * @prop   { String }   unity unity of measure
- * @prop   { String }   type Type of macronutrient
- *
- * @return  {JSX.Element}   A React component.
+ * @description Component to display the amount of calories burned, proteins, fats, carbohydrates.
+ * @return  {JSX.Element}   A descriptive card component.
  */
 
 const Card = ({ icon, quantity, unity, type }) => {

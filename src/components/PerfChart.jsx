@@ -5,6 +5,12 @@ import { kindTitle } from '../services/chartUtils';
 import { getUserPerformance } from '../services/userFetchData';
 import '../style/components/_perfChart.scss';
 
+/**
+ * @description Component to display users performances.
+ * This component shows the capacities of the user in 5 categories : cardio, intensity, speed, strengh, endurance and energy .
+ * @return {JSX.Element}    A customized radar chart.
+ */
+
 const PerfChart = () => {
     const [perfDatas, setPerfDatas] = useState(null);
 

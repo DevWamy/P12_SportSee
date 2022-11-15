@@ -6,10 +6,9 @@ import { getAverageSession } from '../services/userFetchData';
 import '../style/components/_averageChart.scss';
 
 /**
- * This component describes the user's average session data.
+ * @description Component to display the session's durations
  * In this component, a function is written that returns a component with a title, a responsive container, a line graph, a line, an abscissa, ordinates and a custom tooltip.
- *
- * @returns {JSX.Element}   A line chart.
+ * @returns {JSX.Element}   A customized line chart.
  */
 
 const AverageSessionChart = () => {

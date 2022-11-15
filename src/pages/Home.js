@@ -11,12 +11,13 @@ import caloriesIcon from '../assets/calories-icon.svg';
 import carbosIcon from '../assets/carbos-icon.svg';
 import lipidsIcon from '../assets/lipids-icon.svg';
 import proteinsIcon from '../assets/proteins-icon.svg';
+// import { getUserInfos } from '../services/userFetchData';
 import '../style/_home.scss';
 
 // /**
 //  * Display customized home page.
 //  *
-//  * @returns {JSX.Element} Home, charts and cards components.
+//  * @returns {JSX.Element} Home, charts and cards customized components.
 //  */
 
 const Home = () => {
@@ -34,22 +35,22 @@ const Home = () => {
     };
     useEffect(() => {
         getDatas();
+        // getUserInfos().then((data) => {
+        //     setUserDatas(data);
+        // });
     }, []);
     return (
         <div className="home">
             <Header />
             <Sidebar />
-            <div className="home-content">
-                {userDatas && (
+            {userDatas && (
+                <div className="home-content">
                     <div className="home-content-header">
                         <h1>
                             Bonjour <span className="firstname">{userDatas.data.userInfos.firstName}</span>
                         </h1>
                         <p>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
                     </div>
-                )}
-
-                {userDatas && (
                     <div className="home-content-body">
                         <div className="home-content-body-chart">
                             <DailyActivityChart />
@@ -83,8 +84,8 @@ const Home = () => {
                             />
                         </div>
                     </div>
-                )}
-            </div>
+                </div>
+            )}
         </div>
     );
 };

@@ -5,6 +5,12 @@ import bike from '../assets/bike.svg';
 import pump from '../assets/pump.svg';
 import '../style/components/_sidebar.scss';
 
+/**
+ *
+ * @description Component to display the sidebar of the app
+ * @return {JSX.Element} A customized vertical navigation bar with copyright.
+ */
+
 const Sidebar = () => {
     return (
         <div className="sidebar">

@@ -3,9 +3,8 @@ import logo from '../assets/logo.png';
 import '../style/components/_header.scss';
 
 /**
- * This component describes
- * In this component, the function returns a component with
- * @return  {JSXElement}    Bar Chart
+ * @description Component to display the header of the app.
+ * @return  {JSXElement}
  */
 const Header = () => {
     return (

@@ -1,8 +1,14 @@
 import React from 'react';
 import { PieChart, Pie, ResponsiveContainer, Cell, Legend } from 'recharts';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import CustomLegend from './CustomLegend';
 import '../style/components/_scoreChart.scss';
+
+/**
+ * @description Component to display the current percentage of the user's objectives
+ * This component shows the user's progress with percentage.
+ * @return {JSX.Element}    A customized pie chart.
+ */
 
 const ScoreChart = ({ score }) => {
     const data = score?.data?.score;
@@ -70,9 +76,8 @@ const ScoreChart = ({ score }) => {
     );
 };
 
-// //Proptypes
-// ScoreChart.propTypes = {
-//     score: PropTypes.number.isRequired,
-// };
+ScoreChart.propTypes = {
+    score: PropTypes.object.isRequired,
+};
 
 export default ScoreChart;
