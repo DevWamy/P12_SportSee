@@ -1,45 +1,22 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 import { PieChart, Pie, ResponsiveContainer, Cell, Legend } from 'recharts';
 // import PropTypes from 'prop-types';
+import CustomLegend from './CustomLegend';
 import '../style/components/_scoreChart.scss';
 
-const ScoreChart = () => {
-    const [scoreDatas, setScoreDatas] = useState(null);
-    const url = 'http://localhost:3000/user/18';
-    const getDatas = async () => {
-        try {
-            const response = await fetch(url);
-
-            const myDatas = await response.json();
-            setScoreDatas(myDatas);
-        } catch (error) {
-            console.log(error);
-        }
-    };
-    useEffect(() => {
-        getDatas();
-    }, []);
-
-    // const data = userScore[1].score;
-    const data = scoreDatas?.data?.score;
-    const CustomLegend = ({ payload }) => (
-        <div className="chart-legend">
-            <div className="chart-legend-1">{payload[0].payload.value * 100}%</div>
-            <div className="chart-legend-2">de votre objectif</div>
-        </div>
-    );
+const ScoreChart = ({ score }) => {
+    const data = score?.data?.score;
 
     return (
         <div className="score-chart">
             <PieChart>
                 <Pie
                     // data={userScore}
-                    data={scoreDatas}
+                    data={score}
                     // dataKey={userScore[1].score}
-                    dataKey={scoreDatas?.data?.score}
+                    dataKey={score?.data?.score}
                     // nameKey={userScore[1].id}
-                    nameKey={scoreDatas?.data?.id}
+                    nameKey={score?.data?.id}
                     cx="50%"
                     cy="50%"
                     outerRadius={50}
@@ -47,7 +24,7 @@ const ScoreChart = () => {
                 />
                 <Pie
                     // data={userScore[0].score}
-                    data={scoreDatas?.data?.score}
+                    data={score?.data?.score}
                     dataKey="value"
                     nameKey="name"
                     cx="50%"
@@ -93,8 +70,9 @@ const ScoreChart = () => {
     );
 };
 
+// //Proptypes
 // ScoreChart.propTypes = {
-//     scoreDatas: PropTypes.number.isRequired,
+//     score: PropTypes.number.isRequired,
 // };
 
 export default ScoreChart;

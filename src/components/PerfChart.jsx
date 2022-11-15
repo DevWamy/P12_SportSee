@@ -1,38 +1,21 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart, ResponsiveContainer } from 'recharts';
-// import PropTypes from 'prop-types';
+import { kindTitle } from '../services/chartUtils';
+import { getUserPerformance } from '../services/userFetchData';
 import '../style/components/_perfChart.scss';
 
 const PerfChart = () => {
     const [perfDatas, setPerfDatas] = useState(null);
-    const url = 'http://localhost:3000/user/18/performance';
-    const getDatas = async () => {
-        try {
-            const response = await fetch(url);
-
-            const myDatas = await response.json();
-            setPerfDatas(myDatas);
-        } catch (error) {
-            console.log(error);
-        }
-    };
 
     useEffect(() => {
-        getDatas();
+        getUserPerformance().then((data) => {
+            setPerfDatas(data);
+        });
     }, []);
 
-    // const kind = userPerformance[0].kind;
-    // const data = userPerformance[0].data;
-
-    const kindTitle = {
-        cardio: 'Cardio',
-        energy: 'Energie',
-        endurance: 'Endurance',
-        strength: 'Force',
-        speed: 'Vitesse',
-        intensity: 'Intensité',
-    };
+    // const kind = mockedPerformance[0].kind;
+    // const data = mockedPerformance[0].data;
 
     return (
         <div className="perf-chart">
@@ -75,9 +58,5 @@ const PerfChart = () => {
         </div>
     );
 };
-
-// PerfChart.propTypes = {
-//     perfDatas: PropTypes.array.isRequired,
-// };
 
 export default PerfChart;

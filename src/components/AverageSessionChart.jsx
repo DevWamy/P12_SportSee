@@ -1,25 +1,24 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Line, LineChart, Tooltip, XAxis, YAxis, ResponsiveContainer } from 'recharts';
-// import PropTypes from 'prop-types';
+import { formatDayWeek } from '../services/chartUtils';
+import { getAverageSession } from '../services/userFetchData';
 import '../style/components/_averageChart.scss';
+
+/**
+ * This component describes the user's average session data.
+ * In this component, a function is written that returns a component with a title, a responsive container, a line graph, a line, an abscissa, ordinates and a custom tooltip.
+ *
+ * @returns {JSX.Element}   A line chart.
+ */
 
 const AverageSessionChart = () => {
     const [sessionDatas, setSessionDatas] = useState(null);
-    const url = 'http://localhost:3000/user/18/average-sessions';
-    const getDatas = async () => {
-        try {
-            const response = await fetch(url);
-
-            const myDatas = await response.json();
-            setSessionDatas(myDatas);
-        } catch (error) {
-            console.log(error);
-        }
-    };
 
     useEffect(() => {
-        getDatas();
+        getAverageSession().then((data) => {
+            setSessionDatas(data);
+        });
     }, []);
 
     const CustomTooltip = ({ active, payload }) => {
@@ -37,30 +36,25 @@ const AverageSessionChart = () => {
         return <rect x={points[0].x} y={0} height="100%" width="100%" fill="rgba(0, 0, 0, 0.1)" />;
     };
 
-    const dayWeek = { 1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D' };
-    const formatDay = (item) => dayWeek[item];
-    // const sessionRequired = sessionDatas.data.sessions;
-
     return (
         <div className="average-sessions-chart">
             <h4>Durée moyenne des sessions</h4>
             {sessionDatas && (
                 <ResponsiveContainer width="100%" height="100%">
                     <LineChart data={sessionDatas.data.sessions}>
-                        {/* <LineChart data={sessionRequired}> */}
                         <XAxis
                             dataKey="day"
-                            tickFormatter={formatDay}
-                            //Adaptation du contenu à l'element parent.
-                            padding={{ left: 10, right: 10 }}
+                            tickFormatter={formatDayWeek}
                             //Espacement entre la courbe et les jours.
-                            tickSize={5}
+                            tickSize={8}
                             axisLine={false}
                             tickLine={false}
-                            tick={{ fill: 'rgba(255,255,255,0.6)' }}
+                            tick={{ fill: 'rgba(255,255,255,0.6)', dx: -5 }}
+                            style={{ transform: 'scale(0.90)', transformOrigin: 'bottom' }}
                         />
 
                         <YAxis hide domain={['dataMin-6', 'dataMax+12']} />
+
                         <Tooltip
                             content={<CustomTooltip />}
                             cursor={<CustomHover />}
@@ -77,7 +71,12 @@ const AverageSessionChart = () => {
                             //Largeur de la courbe
                             strokeWidth={2}
                             //Taille du point actif (au hover)
-                            activeDot={{ r: 4 }}
+                            activeDot={{
+                                background: '#FFFFFF',
+                                stroke: 'rgba(255, 255, 255, 0.3)',
+                                strokeWidth: 10,
+                                r: 4,
+                            }}
                             unit={'min'}
                             //Taille des points inactifs
                             dot={{ r: 0 }}
@@ -88,9 +87,5 @@ const AverageSessionChart = () => {
         </div>
     );
 };
-
-// AverageSessionChart.propTypes = {
-//     sessionRequired: PropTypes.array.isRequired,
-// };
 
 export default AverageSessionChart;

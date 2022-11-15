@@ -13,11 +13,14 @@ import lipidsIcon from '../assets/lipids-icon.svg';
 import proteinsIcon from '../assets/proteins-icon.svg';
 import '../style/_home.scss';
 
-// let idUser = {process.env.REACT_APP_USER}
+// /**
+//  * Display customized home page.
+//  *
+//  * @returns {JSX.Element} Home, charts and cards components.
+//  */
 
 const Home = () => {
     const [userDatas, setUserDatas] = useState(null);
-    // const url = 'http://localhost:3000/user/idUser';
     const url = 'http://localhost:3000/user/18';
     const getDatas = async () => {
         try {
@@ -52,7 +55,7 @@ const Home = () => {
                             <DailyActivityChart />
                             <AverageSessionsChart />
                             <PerfChart />
-                            <ScoreChart />
+                            <ScoreChart score={userDatas} />
                         </div>
                         <div className="results">
                             <Card

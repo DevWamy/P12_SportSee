@@ -2,6 +2,11 @@ import React from 'react';
 import logo from '../assets/logo.png';
 import '../style/components/_header.scss';
 
+/**
+ * This component describes
+ * In this component, the function returns a component with
+ * @return  {JSXElement}    Bar Chart
+ */
 const Header = () => {
     return (
         <div className="header">

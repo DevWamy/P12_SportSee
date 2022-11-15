@@ -1,25 +1,24 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend, Tooltip } from 'recharts';
-// import PropTypes from 'prop-types';
+import { formatDay } from '../services/chartUtils';
+import { getUserActivity } from '../services/userFetchData';
 import '../style/components/_activityChart.scss';
+
+/**
+ * This component describes the user's daily activity data.
+ * In this component, the function returns a component with a title, responsive container, double bar chart, x-axis, right y-axis, legend, and custom tooltip.
+ *
+ * @return  {JSX.Element}    Bar Chart
+ */
 
 const DailyActivityChart = () => {
     const [dailyDatas, setDailyDatas] = useState(null);
-    const url = 'http://localhost:3000/user/18/activity';
-    const getDatas = async () => {
-        try {
-            const response = await fetch(url);
-
-            const myDatas = await response.json();
-            setDailyDatas(myDatas);
-        } catch (error) {
-            console.log(error);
-        }
-    };
 
     useEffect(() => {
-        getDatas();
+        getUserActivity().then((data) => {
+            setDailyDatas(data);
+        });
     }, []);
 
     const CustomTooltip = ({ active, payload }) => {
@@ -34,8 +33,6 @@ const DailyActivityChart = () => {
         return null;
     };
 
-    const formatDay = (item) => new Date(item).getDate();
-
     return (
         <div className="activity-chart">
             <h4>Activité quotidienne</h4>
@@ -44,9 +41,9 @@ const DailyActivityChart = () => {
                 <BarChart width={785} height={300} data={dailyDatas.data.sessions}>
                     {/* Pas d'affichage des lignes verticales et taille des pointillés. */}
                     <CartesianGrid vertical={false} strokeDasharray="3 3" />
-                    {/* Absysse: marge entre graph et jours, pas de graduation, et format de jour specifique. */}
+                    {/* marge entre graph et jours, pas de graduation, et format de jour specifique. */}
                     <XAxis dataKey="day" tickMargin={16} tickSize={0} tickFormatter={formatDay} />
-                    {/* Ordonnée: affiché à droite, normalement tous les kg, pas d'axe de base, pas de graduation. */}
+                    {/* affiché à droite, normalement tous les kg, pas d'axe de base, pas de graduation. */}
                     <YAxis
                         yAxisId="kg"
                         dataKey="kilogram"
@@ -104,9 +101,5 @@ const DailyActivityChart = () => {
         </div>
     );
 };
-
-// DailyActivityChart.propTypes = {
-//     data: PropTypes.array.isRequired,
-// };
 
 export default DailyActivityChart;

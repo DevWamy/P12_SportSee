@@ -2,6 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../style/components/_card.scss';
 
+/**
+ * It takes in a type and a countValue, and returns a div with an image, a paragraph, and a span.
+ *
+ * @prop   { String }   icon image of macronutrient
+ * @prop   { ?String }  quantity  Value of the macronutrient
+ * @prop   { String }   unity unity of measure
+ * @prop   { String }   type Type of macronutrient
+ *
+ * @return  {JSX.Element}   A React component.
+ */
+
 const Card = ({ icon, quantity, unity, type }) => {
     return (
         <div className="card">
@@ -27,12 +38,13 @@ Card.propTypes = {
     type: PropTypes.string.isRequired,
 };
 
-//Je ne sais pas si il faut le mettre ou non.
+/**
+ * @defaultProps quantity: default value= 0
+ * @defaultProps unity: default value= ' '
+ */
 Card.defaultProps = {
-    icon: '',
     quantity: 0,
     unity: '',
-    type: '',
 };
 
 export default Card;
