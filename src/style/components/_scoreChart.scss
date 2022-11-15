@@ -31,4 +31,8 @@
         position: absolute;
         left: 20px;
     }
+
+    @media screen and (min-width: 1024px) and (max-width: 1330px) {
+        grid-area: E;
+    }
 }

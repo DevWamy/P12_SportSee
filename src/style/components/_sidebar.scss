@@ -33,10 +33,11 @@
         width: 140px;
     }
 
-    @media screen and (max-width: 1050px) {
-        // width: 88px;
-        // img {
-        //     width: 48px;
-        // }
+    @media screen and (min-width: 1024px) and (max-width: 1330px) {
+        width: 70px;
+        gap: 130px;
+        img {
+            width: 42px;
+        }
     }
 }

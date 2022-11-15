@@ -3,6 +3,8 @@
     grid-area: A;
     background: #fbfbfb;
     padding: 24px 30px;
+    width: 785px;
+    height: 300px;
 
     h4 {
         position: absolute;
@@ -30,5 +32,10 @@
         position: absolute;
         right: 0;
         gap: 52px;
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1330px) {
+        width: 600px;
+        height: 250px;
     }
 }

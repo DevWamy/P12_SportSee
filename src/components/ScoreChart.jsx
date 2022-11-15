@@ -42,7 +42,7 @@ const ScoreChart = ({ score }) => {
                 />
             </PieChart>
             <h4>Score</h4>
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height="100%">
                 <PieChart margin={{ top: 35, right: 35, bottom: 35, left: 35 }}>
                     <Pie
                         dataKey="value"

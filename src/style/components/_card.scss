@@ -1,12 +1,13 @@
-.results {
-    display: flex;
-    flex-direction: column;
-    gap: 39px;
-    width: 258px;
-    @media screen and (max-width: 1380px) {
-        flex-direction: row;
-    }
-}
+// .results {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 39px;
+//     width: 258px;
+
+//     @media screen and (min-width: 1024px) and (max-width: 1330px) {
+//         flex-direction: row;
+//     }
+// }
 .card {
     display: flex;
     align-items: center;
