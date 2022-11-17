@@ -42,9 +42,9 @@ npm install
 yarn
 ```
 - Start the application
-
-- Backend  
+ 
 ```bash
+For backend :
 open a new terminal and run `cd BackEnd` command,
 npm run start
 # or
@@ -53,8 +53,9 @@ npm start
 yarn dev
 the backend will open http://localhost:3000
 ```
-- FrontEnd
+
 ```bash
+For frontEnd :
 open a new terminal,
 npm run start
 # or
