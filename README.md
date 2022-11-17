@@ -1,11 +1,10 @@
 ![logo](src/assets/logo.png)
 
-# SportSee
 
-- ![Author](<https://img.shields.io/badge/Author-Yan Coquoz-">)
-- ![GitHub repo size](<https://img.shields.io/github/repo-size/Yan-Coquoz/SportSee>)  
-![GitHub top language](https://img.shields.io/github/languages/top/Yan-Coquoz/SportSee)
-![GitHub language count](https://img.shields.io/github/languages/count/Yan-Coquoz/SportSee)
+- ![Author](<https://img.shields.io/badge/Author-Nadia Bolivant-">)
+- ![GitHub repo size](<https://img.shields.io/github/repo-size//SportSee>)  
+![GitHub top language](https://img.shields.io/github/languages/top//SportSee)
+![GitHub language count](https://img.shields.io/github/languages/count//SportSee)
 
 ## Frontend
 
