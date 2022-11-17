@@ -11,7 +11,7 @@ import caloriesIcon from '../assets/calories-icon.svg';
 import carbosIcon from '../assets/carbos-icon.svg';
 import lipidsIcon from '../assets/lipids-icon.svg';
 import proteinsIcon from '../assets/proteins-icon.svg';
-// import { getUserInfos } from '../services/userFetchData';
+import { getUserInfos } from '../services/userFetchData';
 import '../style/_home.scss';
 
 // /**
@@ -22,22 +22,11 @@ import '../style/_home.scss';
 
 const Home = () => {
     const [userDatas, setUserDatas] = useState(null);
-    const url = 'http://localhost:3000/user/18';
-    const getDatas = async () => {
-        try {
-            const response = await fetch(url);
 
-            const myDatas = await response.json();
-            setUserDatas(myDatas);
-        } catch (error) {
-            console.log(error);
-        }
-    };
     useEffect(() => {
-        getDatas();
-        // getUserInfos().then((data) => {
-        //     setUserDatas(data);
-        // });
+        getUserInfos().then((data) => {
+            setUserDatas(data);
+        });
     }, []);
     return (
         <div className="home">

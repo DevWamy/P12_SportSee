@@ -17,11 +17,8 @@ const ScoreChart = ({ score }) => {
         <div className="score-chart">
             <PieChart>
                 <Pie
-                    // data={userScore}
                     data={score}
-                    // dataKey={userScore[1].score}
                     dataKey={score?.data?.score}
-                    // nameKey={userScore[1].id}
                     nameKey={score?.data?.id}
                     cx="50%"
                     cy="50%"
@@ -29,7 +26,6 @@ const ScoreChart = ({ score }) => {
                     fill="#8884d8"
                 />
                 <Pie
-                    // data={userScore[0].score}
                     data={score?.data?.score}
                     dataKey="value"
                     nameKey="name"

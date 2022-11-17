@@ -1,5 +1,3 @@
-//For Score chartUtils
-
 /**
  *
  * @description Component to customise the legend's score chart.

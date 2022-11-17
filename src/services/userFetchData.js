@@ -14,12 +14,14 @@ import {
  * @returns Promise.
  */
 export const getUserInfos = async () => {
-    if (process.env.REACT_IS_MOCKED === '0') {
+    if (process.env.REACT_APP_IS_MOCKED_DATA === '0') {
         const response = await fetch(
             `${process.env.REACT_APP_API_URL}/user/${process.env.REACT_APP_USER_ID}`,
         );
+        console.log("Ceci sont des données provenant de l'API");
         return await response.json();
     } else {
+        console.log('Ceci sont des données mockées');
         return new Promise((resolve, reject) => {
             resolve(mockedUserInfos);
         });
@@ -31,12 +33,14 @@ export const getUserInfos = async () => {
  * @returns Promise.
  */
 export const getAverageSession = async () => {
-    if (process.env.REACT_IS_MOCKED === '0') {
+    if (process.env.REACT_APP_IS_MOCKED_DATA === '0') {
         const response = await fetch(
             `${process.env.REACT_APP_API_URL}/user/${process.env.REACT_APP_USER_ID}/average-sessions`,
         );
+        console.log("Ceci sont des données provenant de l'API");
         return await response.json();
     } else {
+        console.log('Ceci sont des données mockées');
         return new Promise((resolve, reject) => {
             resolve(mockedSession);
         });
@@ -49,12 +53,14 @@ export const getAverageSession = async () => {
  * @returns Promise.
  */
 export const getUserActivity = async () => {
-    if (process.env.REACT_IS_MOCKED === '0') {
+    if (process.env.REACT_APP_IS_MOCKED_DATA === '0') {
         const response = await fetch(
             `${process.env.REACT_APP_API_URL}/user/${process.env.REACT_APP_USER_ID}/activity`,
         );
+        console.log("Ceci sont des données provenant de l'API");
         return await response.json();
     } else {
+        console.log('Ceci sont des données mockées');
         return new Promise((resolve, reject) => {
             resolve(mockedActivity);
         });
@@ -67,12 +73,14 @@ export const getUserActivity = async () => {
  * @returns Promise.
  */
 export const getUserPerformance = async () => {
-    if (process.env.REACT_IS_MOCKED === '0') {
+    if (process.env.REACT_APP_IS_MOCKED_DATA === '0') {
         const response = await fetch(
             `${process.env.REACT_APP_API_URL}/user/${process.env.REACT_APP_USER_ID}/performance`,
         );
+        console.log("Ceci sont des données provenant de l'API");
         return await response.json();
     } else {
+        console.log('Ceci sont des données mockées');
         return new Promise((resolve, reject) => {
             resolve(mockedPerformance);
         });
