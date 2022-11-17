@@ -43,14 +43,6 @@ yarn
 ```
 - Start the application
 
-```bash
-npm run start
-# or
-npm start
-# with Yarn
-yarn start
-```
-
 - Backend  
 ```bash
 open a new terminal and run `cd BackEnd` command,
