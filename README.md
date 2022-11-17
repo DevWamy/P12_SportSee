@@ -1,7 +1,7 @@
 ![logo](src/assets/logo.png)
 
 
-- ![Author](https://img.shields.io/badge/Author-Nadia%20Bolivant-lightgrey)
+- ![Author](https://img.shields.io/badge/Author-Nadia%20Bolivant-blue)
 - ![GitHub repo size](https://img.shields.io/github/repo-size/DevWamy/P12_SportSee?color=blueviolet)
 ![GitHub top language](https://img.shields.io/github/languages/top/DevWamy/P12_SportSee?color=ff64b2)
 ![GitHub language count](https://img.shields.io/github/languages/count/DevWamy/P12_SportSee?color=blueviolet)
