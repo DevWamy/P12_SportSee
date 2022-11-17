@@ -53,13 +53,23 @@ yarn start
 
 - Backend  
 ```bash
- open a new terminal and run `cd BackEnd` command,
- then run  `npm start ` or `yarn dev`command
- the backend will open http://localhost:3000
+open a new terminal and run `cd BackEnd` command,
+npm run start
+# or
+npm start
+# with Yarn
+yarn dev
+the backend will open http://localhost:3000
 ```
 - FrontEnd
 ```bash
-  open a new terminal, then run the`npm start ` or  `yarn start` command will allow you to run the application on http://localhost:3001
+open a new terminal,
+npm run start
+# or
+npm start
+# with Yarn
+yarn start 
+will allow you to run the application on http://localhost:3001
  ```
 
 
