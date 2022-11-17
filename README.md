@@ -75,5 +75,9 @@ will allow you to run the application on http://localhost:3001
 ### Added dependencies
 
 - ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/DevWamy/P12_SportSee/react?color=blueviolet)
-- ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/DevWamy/P12_SportSee/recharts?color=blueviolet)
+- ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/DevWamy/P12_SportSee/recharts?color=ff64b2)
 
+## Backend
+
+[Backend repository](https://img.shields.io/badge/Backend-Link%20repository-blue)
+(https://github.com/DevWamy/P12_SportSee_Backend))
