@@ -14,7 +14,7 @@ This repository contains all the source code to run the SportSee sports analytic
 
 ## Prerequisites
 
-- [NodeJS (**version 16.17.0**)]{(https://img.shields.io/npm/v/npm?color=blueviolet&label=NodeJS) (https://nodejs.org/en/)}
+- [NodeJS (**version 16.17.0**)](https://nodejs.org/en/)
 - [NPM (**version 8.15.0**)](https://www.npmjs.com/)
 - [REACT (**version 18.2.0**)](https://en.reactjs.org/) is recommanded to run charts correctly
 - [RECHARTS (**version 2.1.15**)](https://recharts.org/en-US/)
