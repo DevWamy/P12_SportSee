@@ -2,15 +2,15 @@
 
 
 - ![Author](<https://img.shields.io/badge/Author-Nadia Bolivant-">)
-- ![GitHub repo size](<https://img.shields.io/github/repo-size//SportSee>)  
-![GitHub top language](https://img.shields.io/github/languages/top//SportSee)
-![GitHub language count](https://img.shields.io/github/languages/count//SportSee)
+- ![GitHub repo size](<https://img.shields.io/github/repo-size/DevWamy/SportSee>)  
+![GitHub top language](https://img.shields.io/github/languages/top/DevWamy/SportSee)
+![GitHub language count](https://img.shields.io/github/languages/count/DevWamy/SportSee)
 
 ## Frontend
 
 ### General information
 
-This repo contains all the source code to run the application of the sports analytics dashboard SportSee.
+This repository contains all the source code to run the SportSee sports analytics dashboard application.
 
 
 # Getting Started with Create React App
