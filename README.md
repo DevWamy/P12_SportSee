@@ -12,6 +12,56 @@
 
 This repository contains all the source code to run the SportSee sports analytics dashboard application.
 
+## Prerequisites
+
+- [NodeJS (**version 16.17.0**)](https://nodejs.org/en/)
+- [NPM (**version 8.15.0**)](https://www.npmjs.com/)
+- [REACT (**version 18.2.0**)](https://en.reactjs.org/) is recommanded to run charts correctly
+- [RECHARTS (**version 2.1.15**)](https://recharts.org/en-US/)
+-  [VSCODE (**version 1.73.1**)](https://code.visualstudio.com/)
+
+If you are working with several versions of NodeJS, we recommend you install [nvm](https://github.com/nvm-sh/nvm). This tool will allow you to easily manage your NodeJS versions.
+
+
+- Run the `yarn` command will allow you to install the dependencies
+
+### Project setup
+
+- Fork and clone the repository on your computer.
+
+````bash
+git clone https://github.com/DevWamy/P12_SportSee.git
+````
+
+- Package installations after cloning.
+
+```bash
+# with NPM
+npm install
+# with Yarn
+yarn
+```
+- Start the application
+
+```bash
+npm run start
+# or
+npm start
+# with Yarn
+yarn start
+```
+
+- Backend  
+```bash
+ open a new terminal and run `cd BackEnd` command,
+ then run  `npm start ` or `yarn dev`command
+ the backend will open http://localhost:3000
+```
+- FrontEnd
+```bash
+  open a new terminal, then run the`npm start ` or  `yarn start` command will allow you to run the application on http://localhost:3001
+ ```
+
 
 # Getting Started with Create React App
 
